@@ -1,0 +1,118 @@
+<Defs>
+  <HediffDef Abstract="True" Name="Hediff_PowerBase">
+    <isBad>false</isBad>
+    <makesSickThought>false</makesSickThought>
+    <defaultLabelColor>(0.1, 0.6, 0.4)</defaultLabelColor>
+    <hediffClass>MarvelousMutants.Hediffs.Hediff_Power</hediffClass>
+  </HediffDef>
+  <HediffDef ParentName="Hediff_PowerBase">
+    <defName>HealingFactor</defName>
+    <label>healing factor</label>
+    <hediffClass>MarvelousMutants.Hediffs.Hediff_HealingFactor</hediffClass>
+    <description>This pawn possess a healing factor, allowing them to regenerate at an unnatural rate.</description>
+    <maxSeverity>6</maxSeverity>
+    <stages>
+      <li>
+        <label>tiny</label>
+        <statOffsets>
+          <ImmunityGainSpeed>0.5</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <label>low</label>
+        <minSeverity>1</minSeverity>
+        <statOffsets>
+          <ImmunityGainSpeed>1</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <label>medium</label>
+        <minSeverity>2</minSeverity>
+        <statOffsets>
+          <ImmunityGainSpeed>2</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <label>high</label>
+        <minSeverity>3</minSeverity>
+        <statOffsets>
+          <ImmunityGainSpeed>3</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <label>extreme</label>
+        <minSeverity>4</minSeverity>
+        <statOffsets>
+          <ImmunityGainSpeed>4</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <label>godly</label>
+        <minSeverity>5</minSeverity>
+        <statOffsets>
+          <ImmunityGainSpeed>5</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_HealPermanentWounds" />
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="Hediff_PowerBase">
+    <defName>Teleporter</defName>
+    <label>Teleporter</label>
+    <description>This pawn poses that ability to teleport itself via unknown means</description>
+    <maxSeverity>1</maxSeverity>
+    <stages>
+      <li>
+        <becomeVisible>true</becomeVisible>
+      </li>
+    </stages>
+    <comps>
+      <li Class="MarvelousCore.HediffComps.HediffCompProperties_Ability">
+        <Ability>Power_Teleport</Ability>
+      </li>
+    </comps>
+  </HediffDef>
+  <HediffDef ParentName="Hediff_PowerBase">
+    <defName>Telepath</defName>
+    <label>telepath</label>
+    <hediffClass>MarvelousMutants.Hediffs.Hediff_Telepath</hediffClass>
+    <description>This pawn possess latent telepathic abilities, allowing them to use telepathic powers.</description>
+    <maxSeverity>1.1</maxSeverity>
+    <stages>
+      <li>
+      </li>
+      <li>
+        <label>omega-level</label>
+        <minSeverity>1</minSeverity>
+      </li>
+    </stages>
+    <comps>
+      <li>
+        <compClass>MarvelousMutants.Hediffs.Comps.HediffComp_Xp</compClass>
+      </li>
+    </comps>
+  </HediffDef>
+  <HediffDef ParentName="Hediff_PowerBase">
+    <defName>Telekine</defName>
+    <label>telekine</label>
+    <hediffClass>MarvelousMutants.Hediffs.Hediff_Telekine</hediffClass>
+    <description>This pawn possess latent telekinetic abilities, allowing them to use telekinetic powers.</description>
+    <maxSeverity>1.1</maxSeverity>
+    <stages>
+      <li>
+      </li>
+      <li>
+        <label>omega-level</label>
+        <minSeverity>1</minSeverity>
+      </li>
+    </stages>
+    <comps>
+      <li>
+        <compClass>MarvelousMutants.Hediffs.Comps.HediffComp_Xp</compClass>
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>

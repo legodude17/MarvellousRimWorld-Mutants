@@ -1,0 +1,9 @@
+<Defs>
+  <JobDef>
+    <defName>TeleSleep</defName>
+    <driverClass>MarvelousMutants.JobDriver_TeleSleep</driverClass>
+    <reportString>falling asleep.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+  </JobDef>
+</Defs>

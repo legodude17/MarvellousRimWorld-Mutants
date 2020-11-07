@@ -1,0 +1,58 @@
+<Defs>
+  <AbilityDef ParentName="Ability_PowerBase" Name="TelekineticBase" Abstract="True">
+    <abilityClass>MarvelousMutants.Abilities.Power_Telekinetic</abilityClass>
+  </AbilityDef>
+
+  <AbilityDef ParentName="TelekineticBase">
+    <defName>TeleWallraise</defName>
+    <label>wallraise</label>
+    <description>Form a temporary wall out of telekinetic energy..</description>
+    <level>2</level>
+    <iconPath>UI/Abilities/Wallraise</iconPath>
+    <statBases>
+      <Ability_EntropyGain>0</Ability_EntropyGain>
+    </statBases>
+    <verbProperties>
+      <targetParams>
+        <canTargetPawns>False</canTargetPawns>
+        <canTargetLocations>True</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilityWallraise">
+        <compClass>MarvelousMutants.Abilities.Comps.CompAbilityEffect_TeleWallraise</compClass>
+        <pattern>
+          <li>(0, 0)</li>
+        </pattern>
+        <screenShakeIntensity>1.0</screenShakeIntensity>
+        <clamorType>Ability</clamorType>
+        <clamorRadius>25</clamorRadius>
+        <sound>PsycastWallraise</sound>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef ParentName="TelekineticBase">
+    <defName>TeleSmokepop</defName>
+    <label>smokepop</label>
+    <description>Skip dust particles up from under the ground surface to form a thick cloud. This reduces the accuracy of any shot fired through it, and prevents turrets from locking on entirely.</description>
+    <level>0</level>
+    <iconPath>UI/Abilities/Smokepop</iconPath>
+    <statBases>
+      <Ability_EntropyGain>0</Ability_EntropyGain>
+    </statBases>
+    <verbProperties>
+      <targetParams>
+        <canTargetPawns>False</canTargetPawns>
+        <canTargetLocations>True</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilitySmokepop">
+        <smokeRadius>3.5</smokeRadius>
+        <clamorType>Ability</clamorType>
+        <clamorRadius>15</clamorRadius>
+      </li>
+    </comps>
+  </AbilityDef>
+</Defs>

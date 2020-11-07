@@ -1,0 +1,20 @@
+<ModMetaData>
+	<name>Marvelous Rimworld: Mutants</name>
+	<author>legodude17</author>
+	<supportedVersions>
+			<li>1.1</li>
+	</supportedVersions>
+	<description>Adds mutants to rimworld! Some pawns have a latent x-gene, which can activate in times of stress or pain.</description>
+	<packageId>legodude17.marvelous.mutants</packageId>
+	<modDependencies>
+    <li>
+      <packageId>legodude17.marvelous.core</packageId>
+      <displayName>Marvelous Rimworld: Core</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+	<loadAfter>
+		<li>legodude17.marvelous.core</li>
+	</loadAfter>
+</ModMetaData>
+

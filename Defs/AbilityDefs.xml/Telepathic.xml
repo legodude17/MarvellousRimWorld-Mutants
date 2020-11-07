@@ -1,0 +1,161 @@
+<Defs>
+  <AbilityDef ParentName="Ability_PowerBase" Name="TelepathicBase" Abstract="True">
+    <abilityClass>MarvelousMutants.Abilities.Power_Telepathic</abilityClass>
+  </AbilityDef>
+
+  <AbilityDef ParentName="TelepathicBase">
+    <defName>TelePainStop</defName>
+    <label>painstop</label>
+    <description>Block pain pathways in the target's brain for a short time. This can allow a person to move and act even with grievous injuries which would normally incapacitate them.</description>
+    <level>1</level>
+    <iconPath>UI/Abilities/Painblock</iconPath>
+    <statBases>
+      <Ability_EntropyGain>0</Ability_EntropyGain>
+      <Ability_Duration>240</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetAnimals>True</canTargetAnimals>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>PsychicAnesthesia</hediffDef>
+        <applicableToMechs>False</applicableToMechs>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="TelepathicBase">
+    <defName>TeleStun</defName>
+    <label>stun</label>
+    <description>Momentarily disrupt motor function in target's brain, preventing any movement.</description>
+    <level>0</level>
+    <iconPath>UI/Abilities/Stun</iconPath>
+    <statBases>
+      <Ability_EntropyGain>0</Ability_EntropyGain>
+      <Ability_Duration>5</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <targetParams>
+        <canTargetAnimals>True</canTargetAnimals>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilityEffectWithDuration">
+        <compClass>CompAbilityEffect_Stun</compClass>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="TelepathicBase">
+    <defName>TeleBlind</defName>
+    <label>blind</label>
+    <description>Induce noise in the visual centers of the brain, obscuring vision of everyone near the target point.</description>
+    <level>2</level>
+    <iconPath>UI/Abilities/BlindingPulse</iconPath>
+    <statBases>
+      <Ability_EntropyGain>0</Ability_EntropyGain>
+      <Ability_Duration>60</Ability_Duration>
+    </statBases>
+    <comps>
+      <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>PsychicBlindness</hediffDef>
+        <onlyBrain>True</onlyBrain>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="TelepathicBase">
+    <defName>TeleFocus</defName>
+    <label>focus</label>
+    <description>Telepathically focus the target's mind, boosting their sight, hearing and moving capacities.</description>
+    <level>2</level>
+    <iconPath>UI/Abilities/Focus</iconPath>
+    <hotKey>Misc11</hotKey>
+    <statBases>
+      <Ability_EntropyGain>0</Ability_EntropyGain>
+      <Ability_Duration>120</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>PsychicFocus</hediffDef>
+        <onlyBrain>True</onlyBrain>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="TelepathicBase">
+    <defName>TeleBerserk</defName>
+    <label>berserk</label>
+    <description>Induce an angry psychosis in the target's mind, causing them to attack anyone nearby.</description>
+    <level>4</level>
+    <iconPath>UI/Abilities/Berserk</iconPath>
+    <statBases>
+      <Ability_EntropyGain>0</Ability_EntropyGain>
+      <Ability_Duration>40</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilityGiveMentalState">
+        <compClass>CompAbilityEffect_GiveMentalState</compClass>
+        <stateDef>Berserk</stateDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="TelepathicBase">
+    <defName>TeleSleep</defName>
+    <label>sleep</label>
+    <description>Telepathically force a target to fall asleep.</description>
+    <level>5</level>
+    <iconPath>UI/Abilities/Stun</iconPath>
+    <statBases>
+      <Ability_EntropyGain>0</Ability_EntropyGain>
+      <Ability_Duration>80</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <targetParams>
+        <canTargetAnimals>True</canTargetAnimals>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilityForceJob">
+        <compClass>CompAbilityEffect_ForceJob</compClass>
+        <jobDef>TeleSleep</jobDef>
+        <destination>RandomInRange</destination>
+        <randomRange>0~1</randomRange>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="TelepathicBase">
+    <defName>TeleMindControl</defName>
+    <label>mind control</label>
+    <description>Telepathically control a target for a time.</description>
+    <level>5</level>
+    <iconPath>UI/Abilities/Stun</iconPath>
+    <statBases>
+      <Ability_EntropyGain>0</Ability_EntropyGain>
+      <Ability_Duration>80</Ability_Duration>
+    </statBases>
+    <comps>
+      <li Class = "CompProperties_AbilityEffectWithDuration">
+        <compClass>MarvelousMutants.Abilities.Comps.CompAbilityEffect_MindControl</compClass>
+      </li>
+    </comps>
+  </AbilityDef>
+</Defs>

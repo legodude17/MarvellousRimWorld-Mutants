@@ -1,0 +1,53 @@
+<Defs>
+  <AbilityDef Name="Ability_PowerBase" Abstract="True">
+    <abilityClass>MarvelousMutants.Abilities.Ability_Power</abilityClass>
+    <statBases>
+      <Ability_Duration>0</Ability_Duration>
+      <Ability_DetectChancePerEntropy>0</Ability_DetectChancePerEntropy>
+      <Ability_EntropyGain>0</Ability_EntropyGain>
+    </statBases>
+    <verbProperties>
+      <verbClass>MarvelousMutants.Abilities.Verb_UsePower</verbClass>
+      <requireLineOfSight>False</requireLineOfSight>
+      <warmupTime>0.1</warmupTime>
+      <range>50</range>
+      <targetParams>
+        <canTargetBuildings>False</canTargetBuildings>
+        <canTargetAnimals>False</canTargetAnimals>
+        <thingCategory>Item</thingCategory>
+        <mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+  <AbilityDef ParentName="Ability_PowerBase">
+    <defName>Power_Teleport</defName>
+    <label>Teleport</label>
+    <description>Teleport oneself instantly to a new location</description>
+    <level>0</level>
+    <iconPath>UI/Abilities/Skip</iconPath>
+    <verbProperties>
+      <targetParams>
+        <canTargetPawns>False</canTargetPawns>
+        <canTargetLocations>True</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilityTeleport">
+        <compClass>MarvelousMutants.Abilities.Comps.CompAbilityEffect_TeleportSelf</compClass>
+        <destination>Selected</destination>
+        <requiresLineOfSight>False</requiresLineOfSight>
+        <clamorType>Ability</clamorType>
+        <clamorRadius>10</clamorRadius>
+        <destClamorType>Ability</destClamorType>
+        <destClamorRadius>10</destClamorRadius>
+        <stunTicks>0~0</stunTicks>
+        <goodwillImpact>0</goodwillImpact>
+        <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+      </li>
+      <li Class="MarvelousMutants.Abilities.Comps.AbilityCompProperties_TireSelf">
+        <TireUsage>0.01</TireUsage>
+      </li>
+    </comps>
+  </AbilityDef>
+</Defs>
