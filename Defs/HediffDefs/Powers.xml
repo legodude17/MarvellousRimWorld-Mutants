@@ -70,7 +70,7 @@
       </li>
     </stages>
     <comps>
-      <li Class="MarvelousCore.HediffComps.HediffCompProperties_Ability">
+      <li Class="MarvelousMutants.Hediffs.Comps.HediffCompProperties_Ability">
         <Ability>Power_Teleport</Ability>
       </li>
     </comps>

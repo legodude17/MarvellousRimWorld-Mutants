@@ -6,51 +6,34 @@ namespace MarvelousMutants.Abilities
 {
     public class Ability_Power : Ability
     {
-        public int Cooldown { get; protected set; }
-
         public Ability_Power(Pawn pawn) : base(pawn)
         {
-            
         }
 
         public Ability_Power(Pawn pawn, AbilityDef def) : base(pawn, def)
         {
-            
         }
+
+        public int Cooldown { get; protected set; }
 
         private AbilityComp_Cooldown CooldownComp => CompOfType<AbilityComp_Cooldown>();
 
         public override void AbilityTick()
         {
             base.AbilityTick();
-            if (Cooldown > 0)
-            {
-                Cooldown--;
-            }
+            if (Cooldown > 0) Cooldown--;
 
             foreach (var comp in comps)
-            {
                 if (comp is IEffectTick tickable)
-                {
                     tickable.Tick();
-                }
-            }
         }
 
         public override bool Activate(LocalTargetInfo target, LocalTargetInfo dest)
         {
-            if (CooldownComp != null)
-            {
-                Cooldown = CooldownComp.Props.Cooldown;
-            }
-            
-            
-            return base.Activate(target, dest);
-        }
+            if (CooldownComp != null) Cooldown = CooldownComp.Props.Cooldown;
 
-        public override Command GetGizmo()
-        {
-            return gizmo ?? (gizmo = new Command_Power(this));
+
+            return base.Activate(target, dest);
         }
     }
 }

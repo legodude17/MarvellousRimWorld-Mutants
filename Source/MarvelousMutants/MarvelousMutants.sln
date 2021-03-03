@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelousMutants", "MarvelousMutants\MarvelousMutants.csproj", "{DE746240-2416-4D9A-94F4-08A3CAC11827}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelousMutants", "MarvelousMutants.csproj", "{DE746240-2416-4D9A-94F4-08A3CAC11827}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

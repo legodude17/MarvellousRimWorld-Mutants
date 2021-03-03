@@ -6,6 +6,7 @@
       <Ability_DetectChancePerEntropy>0</Ability_DetectChancePerEntropy>
       <Ability_EntropyGain>0</Ability_EntropyGain>
     </statBases>
+    <gizmoClass>MarvelousMutants.Abilities.Command_Power</gizmoClass>
     <verbProperties>
       <verbClass>MarvelousMutants.Abilities.Verb_UsePower</verbClass>
       <requireLineOfSight>False</requireLineOfSight>
